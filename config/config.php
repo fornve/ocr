@@ -10,14 +10,13 @@ define( 'WORKING_DIR', '/tmp/ocr_working/' );
 if( !file_exists( WORKING_DIR ) )
 	mkdir( WORKING_DIR );
 
-define( 'SMARTY_DIR', '/var/www/anadvert/smarty/' );
 define( 'SMARTY_TEMPLATES_DIR', PROJECT_PATH ."/templates/" );
-//define( 'IMAGE_DIR', '/home/tigi/media/assets/snoopy/images/' );
 define( 'PRODUCTION', false );
 
+define( 'DB_TYPE', 'mysql' );
 define( 'DB_NAME', '' );
 define( 'DB_USERNAME', '' );
 define( 'DB_PASSWORD', '' );
 
-require_once( '/var/www/anadvert/smarty/Smarty.class.php' );
-require_once( '/var/www/anadvert/class/Entity.class.php' );
+define( 'SMARTY_DIR', '/var/www/include/smarty/' );
+require_once( '/var/www/include/smarty/Smarty.class.php' );

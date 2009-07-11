@@ -2,19 +2,17 @@
 
 require_once( 'config/config.php' );
 
-function __autoload( $name ) 
+function __autoload( $name )
 {
-	if( file_exists( 'classes/'. $name .'.class.php' ) )
+	$path_array = array( 'class/', 'entity/', 'controllers/', '/var/www/include/class/' );
+
+	foreach( $path_array as $path )
 	{
-		include_once( 'classes/'. $name .'.class.php' );
-	}
-    elseif( 'controllers/'. $name .'.class.php' )
-    {
-		include_once( 'controllers/'. $name .'.class.php' );
-	}	
-	elseif( 'entity/'. $name .'.class.php' )
-	{
-		include_once( 'entity/'. $name .'.class.php' );
+		if( file_exists( $path. $name .'.class.php' ) )
+		{
+			include_once( $path . $name .'.class.php' );
+			return true;
+		}
 	}
 }
 
